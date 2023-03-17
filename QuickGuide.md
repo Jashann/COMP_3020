@@ -22,4 +22,3 @@ https://ionic.io/ionicons/v4/usage (Highly Recommended)
 
 search for icon from above website, by clicking on Icons.
 Click on the icon, copy and paste in html file where you want to use.
-
