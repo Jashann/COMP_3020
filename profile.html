@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destination Diaries</title>
+
+    <!-- Cute Icons - Ionicons -->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./assets/styles/bootstrap.css">
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="./assets/styles/style.css">
+
+    <!-- Javascript for bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Data -->
+    <script src="./assets/data/Blogs.js"></script>
+    <!-- Search -->
+    <script src="./assets/js/Search.js"></script>
+</head>
+<body>
+
+    <!-- Header - logo + links -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a id="logo" class="navbar-brand" href="./index.html"> <img src="./assets/images/main/logo.png" alt="logo"> </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor03">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link d-inline-flex text-center" href="./index.html">
+                        <ion-icon name="home"></ion-icon>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                     <a class="nav-link text-center" href="./search.html">
+                        <ion-icon name="search"></ion-icon>
+                        Search 
+                    </a>
+                </li>
+               <li class="nav-item">
+                     <a class="nav-link text-center" href="#">
+                        <ion-icon name="people"></ion-icon>
+                        Community 
+                    </a>
+                </li>
+                <li class="nav-item">
+                     <a class="nav-link text-info text-center" href="./profile.html">
+                        <ion-icon name="person"></ion-icon>
+                        Profile 
+                    </a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="mt-5">
+        <div class="container">
+            <form action="./create.html">
+                <div class="form-group p-3">
+                    <label for="exampleInputEmail1" class="form-label ms-1">Email address</label>
+                    <input required type="email" class="mb-2 form-control rounded-5" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="ms-1 form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group p-3">
+                    <label for="exampleInputPassword1" class="form-label ms-1">Password</label>
+                    <input required type="password" class="form-control rounded-5" id="exampleInputPassword1" placeholder="Password">
+                </div>
+
+                <div class="p-3">
+                    <button type="submit" class="btn btn-info rounded-5 my-1"> Login  <ion-icon name="log-in" role="img" class="md hydrated" aria-label="arrow forward"></ion-icon> </button>    
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+
+
+    <!-- Footer -->
+    <footer class="bg-light mt-5 py-5 fixed-bottom">
+        <div class="contianer text-center">
+            &copy; Copyright by 🦬.
+        </div>
+    </footer>
+</body>
+</html>

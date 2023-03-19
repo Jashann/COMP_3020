@@ -6,7 +6,7 @@ class BLOGS {
     }
 
     static getBlogs(queryType, text ) {
-        let results = [];
+        let results = BLOGS.blogs;
         if ( queryType == "TITLE" ) {
             results = BLOGS.blogs.filter(blog => blog.getTitle().toLowerCase().includes(text.toLowerCase()));
         }
@@ -27,17 +27,86 @@ class BLOGS {
     }
 
     static loadData() {
-        console.log("BLOGS.js loaded");
-        BLOGS.addBlog("Blog 1", "This is the body of blog 1", "Author 1", "Winnipeg", "January 13, 2021", "Link 1");
-        BLOGS.addBlog("Blog 2", "This is the body of blog 2", "Author 2", "Winnipeg", "February 13, 2021", "Link 2");
-        BLOGS.addBlog("Blog 3", "This is the body of blog 3", "Author 3", "Winnipeg", "March 13, 2021", "Link 3");
-        BLOGS.addBlog("Blog 4", "This is the body of blog 4", "Author 4", "Winnipeg", "Jan 13, 2021", "Link 4");
-        BLOGS.addBlog("Blog 5", "This is the body of blog 5", "Author 5", "Winnipeg", "Jan 13, 2021", "Link 5");
-        BLOGS.addBlog("Blog 6", "This is the body of blog 6", "Author 6", "Toronto", "Date 6", "Link 6");
-        BLOGS.addBlog("Blog 7", "This is the body of blog 7", "Author 7", "Toronto", "Date 7", "Link 7");
-        BLOGS.addBlog("Blog 8", "This is the body of blog 8", "Author 8", "Toronto", "Date 8", "Link 8");
-        BLOGS.addBlog("Blog 9", "This is the body of blog 9", "Author 9", "Toronto", "Date 9", "Link 9");
-        BLOGS.addBlog("Blog 10", "This is the body of blog 10", "Author 10", "Toronto", "Date 10", "Link 10");
+        BLOGS.addBlog(
+          'Explore Winnipeg',
+          'Find out what Winnipeg has to offer, from the best restaurants to the best places to visit.',
+          'Jack Smith',
+          'Winnipeg',
+          'Jan 13, 2021',
+          'https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+        )
+        BLOGS.addBlog(
+          'Welcome to Winnipeg',
+          'Polar bears, poutine, and the best hockey in the world. Winnipeg is a city that is full of surprises.',
+          'John Doe',
+          'Winnipeg',
+          'Feb 13, 2021',
+          'https://images.pexels.com/photos/3374204/pexels-photo-3374204.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+        )
+        BLOGS.addBlog(
+          'Adapting to Winnipeg',
+          'Are you new to Winnipeg? Here are some tips to help you adapt to the city.',
+          'Alex Smith',
+          'Winnipeg',
+          'Mar 13, 2021',
+          'https://images.pexels.com/photos/3047413/pexels-photo-3047413.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+        )
+        BLOGS.addBlog(
+          'Explore Summerland',
+          'Find out what Summerland has to offer, from the best restaurants to the best places to visit.',
+          'Jashan Gill',
+          'Winnipeg',
+          'Jan 13, 2021',
+          'https://images.pexels.com/photos/33041/antelope-canyon-lower-canyon-arizona.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+        )
+        BLOGS.addBlog(
+          'Explore Singapore',
+          'The Lion City is a city that is full of surprises. Weave your way through the city and discover the best places to visit.',
+          'Michael Jackson',
+          'Singapore',
+          'Jan 13, 2021',
+          'https://images.pexels.com/photos/2236713/pexels-photo-2236713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+        )
+        BLOGS.addBlog(
+          'Explore Toronto',
+          'Toronto is a city that is full of surprises. Weave your way through the city and discover the best places to visit.',
+          'Robert Downey Jr.',
+          'Toronto',
+          'Date 6',
+          'https://images.pexels.com/photos/3930012/pexels-photo-3930012.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+        )
+        BLOGS.addBlog(
+          'Niagara Falls',
+          'Niagara Falls explores nature at its best. The falls are a must-see for anyone visiting Toronto.',
+          'Drake',
+          'Toronto',
+          'Date 7',
+          'https://images.pexels.com/photos/1642770/pexels-photo-1642770.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+        )
+        BLOGS.addBlog(
+          'Toronto Zoo',
+          'Wild animals, exotic birds, and the best zoo in the world. The Toronto Zoo is a must-see for anyone visiting Toronto.',
+          'Justin Bieber',
+          'Toronto',
+          'Date 8',
+          'https://images.pexels.com/photos/1775862/pexels-photo-1775862.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+        )
+        BLOGS.addBlog(
+          'Explore London',
+          'Welcome to London, the capital of England. London is a city that is full of surprises. Weave your way through the city and discover the best places to visit.',
+          'Sir Alex Ferguson',
+          'London',
+          'Date 9',
+          'https://images.pexels.com/photos/4226593/pexels-photo-4226593.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load'
+        )
+        BLOGS.addBlog(
+          'Find your way around Portugal',
+          'Go on a journey through Portugal and discover the best places to visit.',
+          'Cristiano Ronaldo',
+          'Portugal',
+          'Date 10',
+          'https://images.pexels.com/photos/4226919/pexels-photo-4226919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+        )
     }
 }
 
