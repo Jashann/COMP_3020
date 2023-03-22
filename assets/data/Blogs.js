@@ -1,8 +1,8 @@
 class BLOGS {
     static blogs = [];
 
-    static addBlog(title, body, author, destination, date, link) {
-        BLOGS.blogs.push(new Blog(title, body, author, destination, date, link));
+    static addBlog(title, body, author, destination, date, imageLink) {
+        BLOGS.blogs.push(new Blog(title, body, author, destination, date, imageLink));
     }
 
     static getBlogs(queryType, text ) {
@@ -37,7 +37,7 @@ class BLOGS {
         )
         BLOGS.addBlog(
           'Welcome to Winnipeg',
-          'Polar bears, poutine, and the best hockey in the world. Winnipeg is a city that is full of surprises.',
+          'Polar bears, poutine, and the best hockey in the world. \n Winnipeg is a city that is full of surprises.Polar bears, poutine, and the best hockey in the world. Winnipeg is a city that is full of surprises.Polar bears, poutine, and the best hockey in the world. Winnipeg is a city that is full of surprises.Polar bears, poutine, and the best hockey in the world. Winnipeg is a city that is full of surprises.Polar bears, poutine, and the best hockey in the world. Winnipeg is a city that is full of surprises.Polar bears, poutine, and the best hockey in the world. Winnipeg is a city that is full of surprises.Polar bears, poutine, and the best hockey in the world. Winnipeg is a city that is full of surprises.Polar bears, poutine, and the best hockey in the world. Winnipeg is a city that is full of surprises.Polar bears, poutine, and the best hockey in the world. Winnipeg is a city that is full of surprises.Polar bears, poutine, and the best hockey in the world. Winnipeg is a city that is full of surprises.Polar bears, poutine, and the best hockey in the world. Winnipeg is a city that is full of surprises.Polar bears, poutine, and the best hockey in the world. Winnipeg is a city that is full of surprises.Polar bears, poutine, and the best hockey in the world. Winnipeg is a city that is full of surprises.Polar bears, poutine, and the best hockey in the world. Winnipeg is a city that is full of surprises.Polar bears, poutine, and the best hockey in the world. Winnipeg is a city that is full of surprises.Polar bears, poutine, and the best hockey in the world. Winnipeg is a city that is full of surprises.Polar bears, poutine, and the best hockey in the world. Winnipeg is a city that is full of surprises.Polar bears, poutine, and the best hockey in the world. Winnipeg is a city that is full of surprises.',
           'John Doe',
           'Winnipeg',
           'Feb 13, 2021',
@@ -112,13 +112,13 @@ class BLOGS {
 
 
 class Blog {
-    constructor(title, body, author, destination, date, link) {
+    constructor(title, body, author, destination, date, imageLink) {
         this.title = title;
         this.body = body;
         this.author = author;
         this.date = date;
-        this.link = link;
         this.destination = destination;
+        this.imageLink = imageLink;
     }
 
     getTitle() {
@@ -137,11 +137,19 @@ class Blog {
         return this.date;
     }
 
-    getLink() {
-        return this.link;
+    getImageLink() {
+        return this.imageLink;
     }
 
     getDestination() {
         return this.destination;
+    }
+
+    randomIntFromInterval(min, max) { // min and max included 
+      return Math.floor(Math.random() * (max - min + 1) + min)
+    }
+
+    getUniqueID() {
+        return (this.title + this.author + this.randomIntFromInterval(1, 1000) ).trim().toLowerCase().replace(/ /g, "");
     }
 }

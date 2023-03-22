@@ -13,6 +13,10 @@
     <!-- Global CSS -->
     <link rel="stylesheet" href="./assets/styles/style.css">
 
+    <!-- Javascript for BLOGS -->
+    <script src="./assets/data/Blogs.js"></script>
+    <script src="./assets/js/Search.js"></script>
+
     <!-- Javascript for bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     
@@ -74,59 +78,59 @@
         </div>
     </section>
 
-
     <!-- Blogs -->
-    <section>
+    <section id="home-blogs">
         <div class="container">
+
+            <h1>Popular <span class="text-info-bold">Blogs</span> </h1>
+
             <div class="row justify-content-around">
-                <div class="mt-5 mb-2 col-6 col-lg-3">
+
+                <!-- <div class="mt-5 mb-2 col-6 col-lg-3">
                     <div class="card rounded-4">
-                        <img class="" src="./assets/images/main/welcome.jpeg" class="card-img-top" alt="...">
+                        <img src="./assets/images/main/welcome.jpeg" class="card-img-top" alt="Blog Image">
                         <div class="card-body">
                             <h5 class="fs-4 text-info">Blog title</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <p class="fs-5"> Author: <span class="text-info"> John Wick </span> </p>
                             <p class="fs-5"> Date: <span class="text-info"> Feb 13, 2022 </span> </p>
-                            <a href="#" class="btn btn-sm btn-info fs-6 rounded-5">Read Now <ion-icon class="icon-small" name="arrow-forward"></ion-icon> </a>
+                            <button type="button" class="btn btn-sm btn-info fs-6 rounded-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Read More
+                                <ion-icon class="icon-small" name="arrow-forward"></ion-icon> 
+                            </button>
                         </div>
-                    </div>
-                </div>
-                 <div class="mt-5 mb-2 col-6 col-lg-3">
-                    <div class="card rounded-4">
-                        <img class="" src="./assets/images/main/welcome.jpeg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="fs-4 text-info">Blog title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <p class="fs-5"> Author: <span class="text-info"> John Wick </span> </p>
-                            <p class="fs-5"> Date: <span class="text-info"> Feb 13, 2022 </span> </p>
-                            <a href="#" class="btn btn-sm btn-info fs-6 rounded-5">Read Now <ion-icon class="icon-small" name="arrow-forward"></ion-icon> </a>
+                        
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable modal-xl">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title text-info fs-3" id="exampleModalLabel"> Blog Title </h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container">
+                                        <div class="d-flex justify-content-center">
+                                            <img class="img-fluid rounded-4" src="./assets/images/main/welcome.jpeg" alt="Blog Image">
+                                        </div>
+                                        <div class="mt-4">
+                                            <p class="fs-5"> Author: <span class="text-info"> John Wick </span> </p>
+                                            <p class="fs-5"> Date: <span class="text-info"> Feb 13, 2022 </span> </p>
+                                            <p class="fs-5"> Location: <span class="text-info"> Winnipeg </span> </p>
+                                        
+                                            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio possimus enim, similique ad suscipit assumenda blanditiis ratione eos. Ipsam, laborum officiis. Quos expedita ullam alias rem! Quam hic optio impedit ipsum soluta distinctio deserunt at totam a porro sit libero similique est dicta veritatis dolores placeat, harum neque, dolore nobis? Ipsam reiciendis perferendis similique illo adipisci amet beatae quod, dicta laborum tempora quos! Eligendi recusandae culpa corrupti possimus nemo deserunt ullam autem incidunt rerum tempora delectus sed quis minima ipsum aliquid temporibus dolor molestias ipsa neque, nulla necessitatibus unde quo ab maiores? Repudiandae fugiat nemo tempore architecto a quisquam quam. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button  data-bs-dismiss="modal" type="button" class="btn btn-info rounded-5">Close <ion-icon name="close-circle-outline"></ion-icon> </button>
+                                </div>
+                                </div>
+                            </div>
                         </div>
+
                     </div>
-                </div>
-                 <div class="mt-5 mb-2 col-6 col-lg-3">
-                    <div class="card rounded-4">
-                        <img class="" src="./assets/images/main/welcome.jpeg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="fs-4 text-info">Blog title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <p class="fs-5"> Author: <span class="text-info"> John Wick </span> </p>
-                            <p class="fs-5"> Date: <span class="text-info"> Feb 13, 2022 </span> </p>
-                            <a href="#" class="btn btn-sm btn-info fs-6 rounded-5">Read Now <ion-icon class="icon-small" name="arrow-forward"></ion-icon> </a>
-                        </div>
-                    </div>
-                </div>
-                 <div class="mt-5 mb-2 col-6 col-lg-3">
-                    <div class="card rounded-4">
-                        <img class="" src="./assets/images/main/welcome.jpeg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="fs-4 text-info">Blog title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <p class="fs-5"> Author: <span class="text-info"> John Wick </span> </p>
-                            <p class="fs-5"> Date: <span class="text-info"> Feb 13, 2022 </span> </p>
-                            <a href="#" class="btn btn-sm btn-info fs-6 rounded-5">Read Now <ion-icon class="icon-small" name="arrow-forward"></ion-icon> </a>
-                        </div>
-                    </div>
-                </div>
+
+                </div> -->
             </div>
         </div>
     </section>
