@@ -27,6 +27,13 @@ class BLOGS {
     }
 
     static loadData() {
+
+        const locallyStoredBlogs = JSON.parse(localStorage.getItem('blogs')) || [];
+        locallyStoredBlogs.forEach(blog => {
+            BLOGS.addBlog(blog.title, blog.body, blog.author, blog.destination, blog.date, blog.imageLink);
+        });
+
+
         BLOGS.addBlog(
           'Explore Winnipeg',
           'Find out what Winnipeg has to offer, from the best restaurants to the best places to visit.',

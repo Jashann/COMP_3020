@@ -3,9 +3,13 @@ BLOGS.loadData();
 
 window.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector("form");
+    const SEARCH_SECTION = "search-result";
+    const HOME_SECTION = "home-blogs";
 
+    // if the form exists, then we are on the search page
     if (form) {
-        populateBlogs(BLOGS.getBlogs(), 'search-result')
+        populateBlogs(BLOGS.getBlogs(), SEARCH_SECTION)
+        // add event listener to the form
         form.addEventListener('submit', function (e) {
           e.preventDefault()
 
@@ -15,12 +19,39 @@ window.addEventListener('DOMContentLoaded', function() {
 
           const selectValue = select.value.toUpperCase().trim()
           const inputValue = input.value.trim()
-          populateBlogs(BLOGS.getBlogs(selectValue, inputValue))
+          populateBlogs(
+            BLOGS.getBlogs(selectValue, inputValue),
+            SEARCH_SECTION
+          )
         })
+
+        // add event listener to the show all button
+        const showAllButton = document.querySelector('#showAllBtn')
+        showAllButton.addEventListener('click', function (e) {
+            e.preventDefault()
+            const searchSection = document.querySelector(`#${SEARCH_SECTION}`)
+
+            if (searchSection.classList.contains('showFew'))
+                showAllButton.innerHTML = `
+                <span class="fs-5 me-2 mb-1">Show Few
+                </span>
+                <span class="fs-5">
+                    <ion-icon name="arrow-up"></ion-icon>
+                </span>`
+            else
+                showAllButton.innerHTML = `
+                <span class="fs-5 me-2 mb-1">Show All
+                </span>
+                <span class="fs-5">
+                    <ion-icon name="arrow-down"></ion-icon>
+                </span>`
+
+            searchSection.classList.toggle('showFew')   
+        });
     }
 
     else {
-        populateBlogs(BLOGS.getBlogs(), 'home-blogs');
+        populateBlogs(BLOGS.getBlogs(), HOME_SECTION);
     }
 });
 
