@@ -2,11 +2,9 @@
 BLOGS.loadData();
 
 window.addEventListener('DOMContentLoaded', function() {
-    
     const form = document.querySelector("form");
 
-    // if the form is not null, then we are on the search page
-    if (form != null) {
+    if (form) {
         populateBlogs(BLOGS.getBlogs(), 'search-result')
         form.addEventListener('submit', function (e) {
           e.preventDefault()
@@ -20,8 +18,10 @@ window.addEventListener('DOMContentLoaded', function() {
           populateBlogs(BLOGS.getBlogs(selectValue, inputValue))
         })
     }
-    else 
-        populateBlogs(BLOGS.getBlogs(), 'home-blogs')
+
+    else {
+        populateBlogs(BLOGS.getBlogs(), 'home-blogs');
+    }
 });
 
 
@@ -31,14 +31,10 @@ function populateBlogs(blogs, searchValue) {
     let html = "";
 
     for (let i = 0; i < blogs.length; i++) {
-
         const ID = blogs[i].getUniqueID();
-
-        console.log(searchValue, i);
 
         if (searchValue === 'home-blogs' && i == 4)
             break;
-
 
         const blog = blogs[i];
         html += ` 
@@ -62,7 +58,7 @@ function populateBlogs(blogs, searchValue) {
                         <div class="modal-dialog modal-dialog-scrollable modal-xl">
                             <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title text-info fs-3" id="${blog.getAuthor()}Label"> ${blog.getTitle()} </h1>
+                                <h1 class="modal-title text-info ms-2 fs-3" id="${blog.getAuthor()}Label"> ${blog.getTitle()} </h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
