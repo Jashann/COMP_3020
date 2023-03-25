@@ -2,11 +2,27 @@
 
 body, * {
     font-family: "Josefin Sans" !important;
-    overflow-x: hidden;
     font-weight: lighter;
 }
 
-h1, h2, h3, h4, h5, h6, button, .btn, a, p, span, input, label, textarea, select, option, small, strong, b, i, u, ul, li, ol, dl, dt, dd, form, table, tr, td, th, thead, tbody, tfoot, blockquote, q, cite, pre, code, address, em, var, samp, kbd, dfn, abbr, acronym, sub, sup, tt, del, ins, fieldset, legend, caption, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video, canvas, progress, meter, output, details, summary, menuitem, datalist, keygen, command, embed, object, param, source, track, wbr, bdi, bdo, ruby, rt, rp, noscript, iframe, svg, math, main, template, area, base, basefont, br, col, frame, hr, img, input, isindex, link, meta, param, source, track, wbr, bdi, bdo, ruby, rt, rp, noscript, iframe, svg, math, main, template, area, base, basefont, br, col, frame, hr, img, input, isindex, link, meta, param, source, track, wbr, bdi, bdo, ruby, rt, rp, noscript, iframe, svg, math, main, template, area, base, basefont, br, col, frame, hr, img, input, isindex, link, meta, param, source, track, wbr, bdi, bdo, ruby, rt, rp, noscript, iframe, svg, math, main, template, area, base, basefont, br, col, frame, hr, img, input, isindex, link, meta, param, source, track, wbr, bdi, bdo, ruby, rt, rp, noscript, iframe, svg, math, main, template, area, base, basefont, br, col, frame, hr, img, input, isindex, link, meta, param, source, track, wbr, bdi, bdo, ruby, rt, rp, noscript, iframe, svg, math, main, template {
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+
+/* Keep footer at bottom of page */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6, button, .btn, a {
     text-transform: capitalize;
 }
 h1, h2, h3, h4, h5, h6, p {
@@ -74,12 +90,6 @@ h1, h2, h3, h4, h5, h6, p {
   background-color: #1f9bcf;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
 footer {
     margin-top: auto;
 }
@@ -110,8 +120,8 @@ body.viewport-lg {
 }
 
 .modal {
-    background: #3d3d3d36;
-    backdrop-filter: blur(10px);
+    background: #1a1a1a36;
+    backdrop-filter: blur(2px);
 }
 
 .text-info-bold {
@@ -122,4 +132,49 @@ body.viewport-lg {
 
 .showFew .row > div:nth-child(n+5) {
     display: none;
+}
+
+button.navbar-toggler {
+    color: rgba(31, 154, 207, 0.541);
+    border-radius: 10px;
+}
+
+.card {
+    overflow: hidden;
+}
+
+.modal-content {
+    border-radius: 15px;
+}
+
+.dropdown-menu[data-bs-popper] {
+    top: 100%;
+    right: -80%;
+    left: auto;
+    margin-top: var(--bs-dropdown-spacer);
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 15px;
+    transition: 0.3S all;
+}
+
+.dropdown-menu .btn:hover {
+    transform: scale(1.05);
+}
+
+.dropdown-menu .btn:hover > ion-icon {
+    margin-left: 5px;
+}
+
+.form-control, select, input, textarea {
+    text-transform: initial;
+}
+
+@media screen and (max-width: 990px) {
+    .navbar-nav {
+        flex-direction: row;
+        padding-left: 50px;
+        padding-right: 50px;
+        justify-content: space-between;
+    }
 }

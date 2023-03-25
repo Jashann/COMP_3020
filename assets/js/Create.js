@@ -1,7 +1,11 @@
 window.addEventListener('DOMContentLoaded', function () {
+
+    if ( localStorage.getItem('username') == null ) {
+        window.location.href = 'login.html';
+    }
+
     const form = document.getElementById('create-form');
     const title = form.querySelector('#title');
-    const author = form.querySelector('#author');
     const location = form.querySelector('#location');
     const imgLink = form.querySelector('#img-link');
     const body = form.querySelector('#body');
@@ -9,16 +13,14 @@ window.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', function (e) {
         e.preventDefault();
         const valueTitle = title.value;
-        const valueAuthor = author.value;
+        const valueAuthor = localStorage.getItem('username')
         const valueLocation = location.value;
         const valueImgLink = imgLink.value;
         const valueBody = body.value;
 
         createBlogPost(valueTitle, valueBody, valueAuthor, valueLocation, valueImgLink);
     });
-})
-
-blog.title, blog.body, blog.author, blog.destination, blog.date, blog.imageLink
+});
 
 function createBlogPost(title, body, author, destination, imageLink, ) {
     // get today's date
