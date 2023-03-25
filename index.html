@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Destination Diaries</title>
 
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/main/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/main/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/main/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./assets/images/main/favicon/site.webmanifest">
+
     <!-- Cute Icons - Ionicons -->
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <!-- Bootstrap CSS -->
@@ -89,7 +94,7 @@
                 </div>
 
                 <div class="my-5 col-12 col-md-4 text-center text-md-start">
-                    <h1> Welcome to <span class="text-info">Destination</span> Diaries</h1>
+                    <h1> Welcome to <span class="text-info-bold">Destination</span> Diaries</h1>
                     <p class="mt-3">Share your travel experiences with the world</p>
                     <a href="./search.html" class="btn btn-info rounded-5 my-5">Get Started <ion-icon name="arrow-forward"></ion-icon> </a>
                 </div>
@@ -98,61 +103,47 @@
     </section>
 
     <!-- Blogs -->
-    <section id="home-blogs">
+    <section id="home-blogs" class="mb-5">
         <div class="container">
-
             <h1>Popular <span class="text-info-bold">Blogs</span> </h1>
-
             <div class="row justify-content-around">
-
-                <!-- <div class="mt-5 mb-2 col-6 col-lg-3">
-                    <div class="card rounded-4">
-                        <img src="./assets/images/main/welcome.jpeg" class="card-img-top" alt="Blog Image">
-                        <div class="card-body">
-                            <h5 class="fs-4 text-info">Blog title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <p class="fs-5"> Author: <span class="text-info"> John Wick </span> </p>
-                            <p class="fs-5"> Date: <span class="text-info"> Feb 13, 2022 </span> </p>
-                            <button type="button" class="btn btn-sm btn-info fs-6 rounded-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                Read More
-                                <ion-icon class="icon-small" name="arrow-forward"></ion-icon> 
-                            </button>
-                        </div>
-                        
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-scrollable modal-xl">
-                                <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title text-info fs-3" id="exampleModalLabel"> Blog Title </h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="container">
-                                        <div class="d-flex justify-content-center">
-                                            <img class="img-fluid rounded-4" src="./assets/images/main/welcome.jpeg" alt="Blog Image">
-                                        </div>
-                                        <div class="mt-4">
-                                            <p class="fs-5"> Author: <span class="text-info"> John Wick </span> </p>
-                                            <p class="fs-5"> Date: <span class="text-info"> Feb 13, 2022 </span> </p>
-                                            <p class="fs-5"> Location: <span class="text-info"> Winnipeg </span> </p>
-                                        
-                                            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio possimus enim, similique ad suscipit assumenda blanditiis ratione eos. Ipsam, laborum officiis. Quos expedita ullam alias rem! Quam hic optio impedit ipsum soluta distinctio deserunt at totam a porro sit libero similique est dicta veritatis dolores placeat, harum neque, dolore nobis? Ipsam reiciendis perferendis similique illo adipisci amet beatae quod, dicta laborum tempora quos! Eligendi recusandae culpa corrupti possimus nemo deserunt ullam autem incidunt rerum tempora delectus sed quis minima ipsum aliquid temporibus dolor molestias ipsa neque, nulla necessitatibus unde quo ab maiores? Repudiandae fugiat nemo tempore architecto a quisquam quam. </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button  data-bs-dismiss="modal" type="button" class="btn btn-info rounded-5">Close <ion-icon name="close-circle-outline"></ion-icon> </button>
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div> -->
             </div>
         </div>
     </section>
+    <hr>
+
+    <!-- Map -->
+     <section class="mt-5 pb-5" id="map">
+        <div class="container">
+            <div class="row justify-content-around align-items-center">
+                <div class="col-12 col-md-6">
+                    <h1 class="mb-4"> <span class="text-info-bold">Contact</span> Us</h1>
+
+                        <div class="form-group py-3">
+                            <input required type="text" class="form-control rounded-5" id="location" placeholder="First & Last Name">
+                        </div>
+                        <div class="form-group py-3">
+                            <input required type="text" class="form-control rounded-5 mb-2" id="img-link" placeholder="Email">               
+                        </div>
+                        <div class="form-group py-3">
+                            <textarea class="form-control rounded-5" name="body" id="body" cols="30" rows="10" placeholder="Type your message"></textarea>
+                        </div>
+
+                        <div class="p-3">
+                            <button type="submit" class="btn btn-info rounded-5 my-1"> Submit  <ion-icon name="send"></ion-icon> </button>    
+                        </div>
+                </div>
+                <div class="col-12 col-md-6 rounded-4" style="overflow: hidden;" >
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d77642.36025263529!2d-97.18463244870131!3d49.887529613575715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52ea75f0911e9c5f%3A0x5460e2841ad770fa!2sUniversity%20of%20Manitoba!5e0!3m2!1sen!2sca!4v1679786809132!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    
+
 
     <!-- Footer -->
     <footer class="bg-light mt-5 py-5">

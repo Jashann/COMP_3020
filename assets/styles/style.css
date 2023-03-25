@@ -127,7 +127,7 @@ body.viewport-lg {
 .text-info-bold {
     --bs-text-opacity: 1;
     color: rgba(var(--bs-info-rgb), var(--bs-text-opacity)) !important;
-    /* font-weight: 900; */
+    font-weight: 900;
 }
 
 .showFew .row > div:nth-child(n+5) {
