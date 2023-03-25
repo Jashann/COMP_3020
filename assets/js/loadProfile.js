@@ -3,6 +3,8 @@ window.addEventListener('DOMContentLoaded', function () {
     const username = getUserName();
     const navList = document.querySelector('.navbar-nav');
 
+    onCreatePage = window.location.href.includes("create.html");
+
     // adding nav item to the navbar
     if ( navList != null ) 
     {
@@ -19,7 +21,7 @@ window.addEventListener('DOMContentLoaded', function () {
         if ( username != null ) {
             html = `
             <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle ${onCreatePage && 'text-info'} " data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                         <ion-icon name="person"></ion-icon>
                         ${username} 
                     </a>
