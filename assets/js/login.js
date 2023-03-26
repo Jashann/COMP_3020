@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', function () {
     const loginForm = document.getElementById('login');
 
     if ( this.localStorage.getItem('username') != null ) {
-        window.location.href = 'create.html';
+        window.location.href = 'profile.html';
     }
 
 
@@ -20,7 +20,7 @@ window.addEventListener('DOMContentLoaded', function () {
         else {
             localStorage.setItem('username', username);
             localStorage.setItem('email', email);
-            window.location.href = 'create.html';
+            window.location.href = 'profile.html';
         }
     });
 });
