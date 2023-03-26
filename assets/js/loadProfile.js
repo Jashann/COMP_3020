@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', function () {
     const username = getUserName();
     const navList = document.querySelector('.navbar-nav');
 
-    onCreatePage = window.location.href.includes("create.html");
+    onCreatePage = window.location.href.includes("create.html") || window.location.href.includes("profile.html") ;
 
     // adding nav item to the navbar
     if ( navList != null ) 
@@ -21,20 +21,25 @@ window.addEventListener('DOMContentLoaded', function () {
         if ( username != null ) {
             html = `
             <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle ${onCreatePage && 'text-info'} " data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle ${
+                      onCreatePage && 'text-info'
+                    } " data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                         <ion-icon name="person"></ion-icon>
                         ${username} 
                     </a>
                     
                     <div class="dropdown-menu rounded-4 me-5">
-                        <a class="btn btn-sm btn-info rounded-5" href="./create.html">Create Blog
+                         <a class="btn btn-sm btn-info rounded-5" href="./profile.html">Profile
+                            <ion-icon size="small" name="person"></ion-icon>
+                        </a>
+                        <a class="mt-2 btn btn-sm btn-info rounded-5" href="./create.html">Create Blog
                             <ion-icon size="small" name="create"></ion-icon>
                         </a>
                         <btn id="logout" class="btn btn-sm mt-2 btn-info rounded-5">Log out 
                             <ion-icon size="small"  name="log-out"></ion-icon> 
                         </btn>
             </li>
-            `;       
+            `       
         }
         navList.innerHTML += html;  
     }

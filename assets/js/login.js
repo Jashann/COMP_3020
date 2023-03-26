@@ -10,6 +10,7 @@ window.addEventListener('DOMContentLoaded', function () {
     loginForm.addEventListener('submit', function (e) {
         e.preventDefault();
         const username = loginForm.querySelector('#username').value;
+        const email = loginForm.querySelector('#email').value
         const password = loginForm.querySelector('#password').value;
 
         if (username.length < 5 || username.length > 10 || password.length < 6 || password.length > 20 ) {
@@ -18,6 +19,7 @@ window.addEventListener('DOMContentLoaded', function () {
         }
         else {
             localStorage.setItem('username', username);
+            localStorage.setItem('email', email);
             window.location.href = 'create.html';
         }
     });

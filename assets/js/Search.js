@@ -5,9 +5,14 @@ window.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector("form");
     const SEARCH_SECTION = "search-result";
     const HOME_SECTION = "home-blogs";
+    const PROFILE_SECTION = "profile-blogs";
+
+    onIndexPage = window.location.href.includes('index.html')
+    onSearchPage = window.location.href.includes('search.html');        
+    onProfilePage = window.location.href.includes('profile.html')
 
     // if the form exists, then we are on the search page
-    if (form) {
+    if (form != null && onSearchPage) {
         populateBlogs(BLOGS.getBlogs(), SEARCH_SECTION)
         // add event listener to the form
         form.addEventListener('submit', function (e) {
@@ -50,8 +55,27 @@ window.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    else {
+    if (onIndexPage) {
         populateBlogs(BLOGS.getBlogs(), HOME_SECTION);
+    }
+
+    if (onProfilePage) {
+        username = localStorage.getItem('username');
+        if (username == null) {
+            window.location.href = './login.html';
+        }
+
+        const usernameElement = document.querySelector('#username');
+        if (usernameElement != null)
+            usernameElement.innerText = username;
+
+        const emailElement = document.querySelector('#email')
+        const email = localStorage.getItem('email')
+        if (emailElement != null)
+            emailElement.innerText = email;
+
+        const blogs = BLOGS.getBlogs().filter((blog) => blog.getAuthor().toUpperCase().trim() == username.toUpperCase().trim());
+        populateBlogs(blogs, PROFILE_SECTION);
     }
 
     // add event listener to the delete button
@@ -90,10 +114,6 @@ function sameAuthor(authorName) {
 }
 
 
-function deleteBlogHandler(e){
-    
-}
-
 
 function deleteBlogFromLocalStorage(author, title, date, location, body) {
     const locallyStoredBlogs = localStorage.getItem("blogs");
@@ -122,11 +142,13 @@ function deleteBlogFromLocalStorage(author, title, date, location, body) {
             return result;
         });
         localStorage.setItem("blogs", JSON.stringify(blogs));
-        window.location.href = 'search.html'
+        window.location.reload();
     }
 }
 
 function populateBlogs(blogs, searchValue) {
+    onProfilePage = window.location.href.includes('profile.html')
+    onSearchPage = window.location.href.includes('search.html')
   const searchSection = document.querySelector(`#${searchValue}`)
   const row = searchSection.querySelector('.row')
   let html = ''
@@ -207,7 +229,7 @@ function populateBlogs(blogs, searchValue) {
         `
   }
 
-  if (blogs.length == 0) {
+  if (blogs.length == 0 && onSearchPage) {
     html = `
         <div class="mt-5 rounded-3 alert alert-info text-lowercase" role="alert">
           <span class="text-uppercase">W</span>e apologize, but we could not find any blogs that match your search. <br />
@@ -215,6 +237,15 @@ function populateBlogs(blogs, searchValue) {
         </div>
         `
   }
+
+    if (blogs.length == 0 && onProfilePage) {
+        html = `
+        <div class="mt-3 rounded-3 alert alert-info text-lowercase" role="alert">
+          <span class="text-uppercase">Y</span>ou have not created any blog posts. <br />
+          <span class="text-uppercase">T</span>o create one, Click <a class="btn btn-info rounded-5 btn-sm" href="./create.html"> Here <ion-icon size="small" name="create"></ion-icon> </a>
+        </div>
+        `
+    }
 
   row.innerHTML = html
 }
