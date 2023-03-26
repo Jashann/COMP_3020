@@ -4,7 +4,10 @@ BLOGS.loadData();
 window.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector("form");
     const SEARCH_SECTION = "search-result";
-    const HOME_SECTION = "home-blogs";
+    var HOME_SECTION = "home-blogs";
+    if(this.document.URL.includes("community.html")) { //use this to determine which is the current page
+        HOME_SECTION = "community-blogs";
+    }
 
     // if the form exists, then we are on the search page
     if (form) {
@@ -128,10 +131,15 @@ function deleteBlogFromLocalStorage(author, title, date, location, body) {
 
 function populateBlogs(blogs, searchValue) {
   const searchSection = document.querySelector(`#${searchValue}`)
-  const row = searchSection.querySelector('.row')
+  var orientation;
+  if(searchValue === 'community-blogs') {
+    orientation = searchSection.querySelector('.col-12')
+  } else {
+    orientation = searchSection.querySelector('.row')
+  }
   let html = ''
 
-  for (let i = 0; i < blogs.length; i++) {
+  for (let i = 0; i < blogs.length; i++) {   //can add logic here to only select certain blogs (show posts whose authors have been followed by login user?)
     const ID = blogs[i].getUniqueID()
 
     if (searchValue === 'home-blogs' && i == 4) break
@@ -204,7 +212,7 @@ function populateBlogs(blogs, searchValue) {
 
                 </div>
             </div>
-        `
+            `
   }
 
   if (blogs.length == 0) {
@@ -216,5 +224,5 @@ function populateBlogs(blogs, searchValue) {
         `
   }
 
-  row.innerHTML = html
+  orientation.innerHTML = html
 }
