@@ -131,12 +131,7 @@ function deleteBlogFromLocalStorage(author, title, date, location, body) {
 
 function populateBlogs(blogs, searchValue) {
   const searchSection = document.querySelector(`#${searchValue}`)
-  var orientation;
-  if(searchValue === 'community-blogs') {
-    orientation = searchSection.querySelector('.col-12')
-  } else {
-    orientation = searchSection.querySelector('.row')
-  }
+  const orientation = searchSection.querySelector('.row')
   let html = ''
 
   for (let i = 0; i < blogs.length; i++) {   //can add logic here to only select certain blogs (show posts whose authors have been followed by login user?)
