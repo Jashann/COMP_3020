@@ -4,6 +4,7 @@ window.addEventListener('DOMContentLoaded', function () {
     const navList = document.querySelector('.navbar-nav');
 
     onCreatePage = window.location.href.includes("create.html") || window.location.href.includes("profile.html") ;
+    onCommunityPage = window.location.href.includes("community.html") ;
 
     // adding nav item to the navbar
     if ( navList != null ) 
@@ -20,6 +21,14 @@ window.addEventListener('DOMContentLoaded', function () {
         
         if ( username != null ) {
             html = `
+            <li class="nav-item">
+                <a class="nav-link text-center ${
+                  onCommunityPage && 'text-info'
+                } " href="./community.html">
+                    <ion-icon name="people"></ion-icon>
+                    Community
+                </a>
+            </li>
             <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle ${
                       onCreatePage && 'text-info'
