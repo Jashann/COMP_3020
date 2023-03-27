@@ -69,10 +69,17 @@ h1, h2, h3, h4, h5, h6, p {
     margin-left: 15px;
 }
 
+.bottom-one {
+    margin-bottom: 1cm;
+}
+
+.scrolling-wrapper{
+	overflow-x: auto;
+}
 
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
-  width: 20px;
+    width: 20px;
 }
 
 ::-webkit-scrollbar-track {

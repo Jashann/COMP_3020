@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destination Diaries</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/main/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/main/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/main/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./assets/images/main/favicon/site.webmanifest">
+
+
+    <!-- Cute Icons - Ionicons -->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./assets/styles/bootstrap.css">
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="./assets/styles/style.css">
+
+    <!-- Javascript for BLOGS -->
+    <script src="./assets/data/Blogs.js"></script>
+    <script src="./assets/js/Search.js"></script>
+
+    <!-- Javascript for bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Load Profile to Navbar -->
+    <script src="./assets/js/loadProfile.js"></script>
+
+    <!-- Search -->
+    <script src="./assets/js/Create.js"></script>
+</head>
+
+<body>
+
+    <!-- Header - logo + links -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a id="logo" class="navbar-brand" href="./index.html"> <img src="./assets/images/main/logo.png" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03"
+                aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor03">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link d-inline-flex text-center" href="./index.html">
+                            <ion-icon name="home"></ion-icon>
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-center" href="./search.html">
+                            <ion-icon name="search"></ion-icon>
+                            Search
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-info text-center" href="./community.html">
+                            <ion-icon name="people"></ion-icon>
+                            Community
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="community-blogs">
+        <div class="container-fluid">
+            <h1 class="mb-4"> Your</span> <span class="text-info-bold">Feed</h1>
+            <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
+            </div>
+        </div>
+    </section>
+
+
+    <section id="authors">
+        <p class="bottom-one"></p>
+        <div class="container-fluid">
+            <div class="row justify-content-around align-items-start">
+                <div class="col">
+                    <div class="bg-primary p-5 text-dark bg-opacity-25">
+                        <h2 class="mb-4"> Suggested</span> <span class="text-info-bold">Bloggers </span><ion-icon
+                                name="person"></ion-icon></h2>
+                        <h5 class="text-secondary"> Others with similar interests</h5>
+                        <div class="container text-center">
+                            <div class="row row-cols-auto">
+                                <!--following cards are hardcoded fake data, real system would use database with @data to fill these out-->
+                                <div class="card mb-3 bg-dark" style="min-width: 250px; max-width: 250px; max-height: fit-content;">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg" class="img-fluid rounded-start" alt="Profile image">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title text-info">George</h5>
+                                                <p class="text-success">
+                                                    4 Mutual Friends
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-3 bg-dark" style="min-width: 250px; max-width: 250px; max-height: fit-content;">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid rounded-start" alt="Profile image">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title text-info">Simon</h5>
+                                                <p class="text-success">
+                                                    2 Mutual Friends
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-3 bg-dark" style="min-width: 250px; max-width: 250px; max-height: fit-content;">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid rounded-start" alt="Profile image">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title text-info">Charles</h5>
+                                                <p class="text-success">
+                                                    1 Mutual Friend
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-3 bg-dark" style="min-width: 250px; max-width: 250px; max-height: fit-content;">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="https://images.pexels.com/photos/1547971/pexels-photo-1547971.jpeg?auto=compress&cs=tinysrgb&w=400" class="img-fluid rounded-start" alt="Profile image">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title text-info">Seoung</h5>
+                                                <p class="text-success">
+                                                    8 Mutual Friends
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-3 bg-dark" style="min-width: 250px; max-width: 250px; max-height: fit-content;">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="https://images.pexels.com/photos/34534/people-peoples-homeless-male.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid rounded-start" alt="Profile image">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title text-info">Baker</h5>
+                                                <p class="text-success">
+                                                    3 Mutual Friends
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-3 bg-dark" style="min-width: 250px; max-width: 250px; max-height: fit-content;">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="https://images.pexels.com/photos/1435517/pexels-photo-1435517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid rounded-start" alt="Profile image">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title text-info">Thomas</h5>
+                                                <p class="text-success">
+                                                    9 Mutual Friends
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-3 bg-dark" style="min-width: 250px; max-width: 250px; max-height: fit-content;">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="https://images.pexels.com/photos/2690774/pexels-photo-2690774.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid rounded-start" alt="Profile image">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title text-info">Min La</h5>
+                                                <p class="text-success">
+                                                    2 Mutual Friends
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-3 bg-dark" style="min-width: 250px; max-width: 250px; max-height: fit-content;">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="https://images.pexels.com/photos/2080382/pexels-photo-2080382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid rounded-start" alt="Profile image">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title text-info">Tom</h5>
+                                                <p class="text-success">
+                                                    5 Mutual Friends
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end dummy data-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="bg-primary p-5 text-dark bg-opacity-25">
+                        <h2 class="mb-4"> <span class="text-info-bold">Bucket List </span> Related Posts </span></h2>
+                        <h5 class="text-secondary"> Top Posts Added in the Past Week <ion-icon name="flag"></ion-icon></h5>
+                        <div class="container text-center">
+                            <div class="row row-cols-1">
+
+
+                                <div class="card mb-3 bg-primary bg-opacity-25" style="min-width: auto; max-height: 150px;">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid rounded-start" alt="Profile image">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title" style="color:slateblue;">My Favorite Place Yet!</h5>
+                                                <p style="color: blue;">
+                                                    Canada
+                                                </p>
+                                                <button type="button" class="btn btn-sm btn-info fs-6 rounded-5" data-bs-toggle="modal" data-bs-target="placeholder">
+                                                    Coming Soon!
+                                                    <ion-icon class="icon-small" name="arrow-forward"></ion-icon> 
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-3 bg-primary bg-opacity-25" style="min-width: auto; max-height: 150px;">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="https://images.pexels.com/photos/2325446/pexels-photo-2325446.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid rounded-start" alt="Profile image">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title" style="color:slateblue;">You Would Never Guess What I Saw HERE!</h5>
+                                                <p style="color: blue;">
+                                                    Mongolia
+                                                </p>
+                                                <button type="button" class="btn btn-sm btn-info fs-6 rounded-5" data-bs-toggle="modal" data-bs-target="placeholder">
+                                                    Coming Soon!
+                                                    <ion-icon class="icon-small" name="arrow-forward"></ion-icon> 
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-3 bg-primary bg-opacity-25" style="min-width: auto; max-height: 150px;">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="https://images.pexels.com/photos/1166209/pexels-photo-1166209.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid rounded-start" alt="Profile image">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title" style="color:slateblue;">Revisiting some faves</h5>
+                                                <p style="color: blue;">
+                                                    Greenland
+                                                </p>
+                                                <button type="button" class="btn btn-sm btn-info fs-6 rounded-5" data-bs-toggle="modal" data-bs-target="placeholder">
+                                                    Coming Soon!
+                                                    <ion-icon class="icon-small" name="arrow-forward"></ion-icon> 
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-3 bg-primary bg-opacity-25" style="min-width: auto; max-height: 150px;">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="https://images.pexels.com/photos/255329/pexels-photo-255329.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid rounded-start" alt="Profile image">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title" style="color:slateblue;">Seeing the Glaciers (soon to be gone)</h5>
+                                                <p style="color: blue;">
+                                                    Canada
+                                                </p>
+                                                <button type="button" class="btn btn-sm btn-info fs-6 rounded-5" data-bs-toggle="modal" data-bs-target="placeholder">
+                                                    Coming Soon!
+                                                    <ion-icon class="icon-small" name="arrow-forward"></ion-icon> 
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-light py-5">
+        <div class="contianer text-center">
+            &copy; Copyright by 🦬.
+        </div>
+    </footer>
+</body>
+
+</html>

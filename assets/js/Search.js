@@ -6,10 +6,12 @@ window.addEventListener('DOMContentLoaded', function() {
     const SEARCH_SECTION = "search-result";
     const HOME_SECTION = "home-blogs";
     const PROFILE_SECTION = "profile-blogs";
+    const COMMUNITY_SECTION = "community-blogs";
 
     onIndexPage = window.location.href.includes('index.html')
     onSearchPage = window.location.href.includes('search.html');        
     onProfilePage = window.location.href.includes('profile.html')
+    onCommunityPage = window.location.href.includes('community.html');
 
     // if the form exists, then we are on the search page
     if (form != null && onSearchPage) {
@@ -57,6 +59,10 @@ window.addEventListener('DOMContentLoaded', function() {
 
     if (onIndexPage) {
         populateBlogs(BLOGS.getBlogs(), HOME_SECTION);
+    }
+    
+    if (onCommunityPage) {
+        populateBlogs(BLOGS.getBlogs(), COMMUNITY_SECTION);
     }
 
     if (onProfilePage) {
@@ -153,7 +159,7 @@ function populateBlogs(blogs, searchValue) {
   const row = searchSection.querySelector('.row')
   let html = ''
 
-  for (let i = 0; i < blogs.length; i++) {
+  for (let i = 0; i < blogs.length; i++) {   //can add logic here to only select certain blogs (show posts whose authors have been followed by login user?)
     const ID = blogs[i].getUniqueID()
 
     if (searchValue === 'home-blogs' && i == 4) break
@@ -226,7 +232,7 @@ function populateBlogs(blogs, searchValue) {
 
                 </div>
             </div>
-        `
+            `
   }
 
   if (blogs.length == 0 && onSearchPage) {
@@ -237,7 +243,6 @@ function populateBlogs(blogs, searchValue) {
         </div>
         `
   }
-
     if (blogs.length == 0 && onProfilePage) {
         html = `
         <div class="mt-3 rounded-3 alert alert-info text-lowercase" role="alert">
